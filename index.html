@@ -1,0 +1,66 @@
+<!--
+   index.html
+   
+   Copyright 2016 rails <rails@rails-pc>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Mobile Slider</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.27" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <button id="menu-btn">Menu</button>
+  <div id="side-nav" class="navigation">
+    <a href="javascript:void(0)" class="closebtn">&times;</a>
+    <a id="sign-in" href="#">Log In</a>
+    <a id="menu-orders" href="/orders">Orders</a>
+    <a id="sign-out" href="#">Sign Out</a>
+    <a href="/about">About</a>
+    <a href="/advisors">Advisors</a>
+    <a href="/careers">Careers</a>
+    <a href="/press">Press</a>
+    <a href="/faqs">Faqs</a>
+    <a href="/orientation">Become a chef</a>
+  </div>
+<div id="side-nav-mask"></div>
+</body>
+<script>
+  $(document).ready(function(){
+    $("#menu-btn").click(function(e) {
+      e.preventDefault();
+      $("#side-nav").width(250);
+      $("#side-nav-mask").addClass("menu-overlay");
+    });
+    $(".closebtn, #side-nav-mask").click(function(e) {
+      $("#side-nav").width(0);
+      $("#side-nav-mask").removeClass("menu-overlay");
+    });
+  });
+</script>	
+
+</html>
